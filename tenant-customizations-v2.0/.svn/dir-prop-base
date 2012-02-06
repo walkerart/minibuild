@@ -1,6 +1,0 @@
-K 13
-svn:externals
-V 109
-https://source.collectionspace.org/collection-space/src/services/tags/v2.0/build.properties build.properties
-
-END
