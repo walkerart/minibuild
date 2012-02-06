@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/lifesci
+END
+settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/lifesci/settings.xml
+END
+domain-collectionobject.xml
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/lifesci/domain-collectionobject.xml
+END
+nightly-settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/lifesci/nightly-settings.xml
+END

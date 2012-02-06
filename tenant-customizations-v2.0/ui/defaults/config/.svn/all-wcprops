@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config
+END
+index.json
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/index.json
+END
+location.json
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/location.json
+END
+cataloging.json
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/cataloging.json
+END
+template.json
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/template.json
+END
+intake.json
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/intake.json
+END
+myCollectionSpace.json
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/myCollectionSpace.json
+END
+media.json
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/media.json
+END
+loanout.json
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/loanout.json
+END
+loanin-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/loanin-tab.json
+END
+administration-termlist.json
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/administration-termlist.json
+END
+acquisition.json
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/acquisition.json
+END
+templateViews.json
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/templateViews.json
+END
+movement.json
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/movement.json
+END
+advancedsearch.json
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/advancedsearch.json
+END
+objectexit.json
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/objectexit.json
+END
+group-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/group-tab.json
+END
+organization.json
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/organization.json
+END
+person.json
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/person.json
+END
+cataloging-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/cataloging-tab.json
+END
+createnew.json
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/createnew.json
+END
+intake-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/intake-tab.json
+END
+loanin.json
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/loanin.json
+END
+media-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/media-tab.json
+END
+administration-role.json
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/administration-role.json
+END
+administration-users.json
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/administration-users.json
+END
+loanout-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/loanout-tab.json
+END
+administration.json
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/administration.json
+END
+findedit.json
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/findedit.json
+END
+acquisition-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/acquisition-tab.json
+END
+group.json
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/group.json
+END
+movement-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/movement-tab.json
+END
+objectexit-tab.json
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/collection-space/!svn/ver/6218/src/ui/tags/v2.0/src/main/webapp/defaults/config/objectexit-tab.json
+END

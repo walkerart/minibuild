@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 128
+.base-procedure-loanin.xml.swp
+.domain-procedure-loanin.xml.swp
+.base-procedure-movement.xml.swp
+.base-procedure-intake.xml.swp
+
+END

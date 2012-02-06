@@ -1,0 +1,8 @@
+K 13
+svn:externals
+V 213
+https://source.collectionspace.org/collection-space/src/ui/tags/v2.0/src/main/webapp/defaults	defaults
+https://source.collectionspace.org/collection-space/src/ui/tags/v2.0/src/main/webapp/tenants	example-tenants
+
+
+END

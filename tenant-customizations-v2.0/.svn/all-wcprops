@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/collection-space/!svn/ver/6263/src/tools/mini-build/tenant-customizations-v2.0
+END
+our-tenant.properties
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/collection-space/!svn/ver/6238/src/tools/mini-build/tenant-customizations-v2.0/our-tenant.properties
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/collection-space/!svn/ver/6232/src/services/tags/v2.0/build.properties
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/collection-space/!svn/ver/6238/src/tools/mini-build/tenant-customizations-v2.0/build.xml
+END

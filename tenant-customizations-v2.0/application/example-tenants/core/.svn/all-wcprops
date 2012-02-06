@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/core
+END
+settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/core/settings.xml
+END
+domain-collectionobject.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/core/domain-collectionobject.xml
+END
+nightly-settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/tenants/core/nightly-settings.xml
+END

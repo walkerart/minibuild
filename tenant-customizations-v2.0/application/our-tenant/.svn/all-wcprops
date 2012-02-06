@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/collection-space/!svn/ver/6238/src/tools/mini-build/tenant-customizations-v2.0/application/our-tenant
+END
+settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/settings.xml
+END
+our-tenant-tenant.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/core-tenant.xml
+END
+local-settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/settings.xml
+END

@@ -1,0 +1,389 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults
+END
+base-other-reportingoutput.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-reportingoutput.xml
+END
+domain-procedure-acquisition.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-acquisition.xml
+END
+domain-instance-vocabularies.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-instance-vocabularies.xml
+END
+base-authz-permrole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authz-permrole.xml
+END
+base-procedure-acquisition.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-acquisition.xml
+END
+base-procedure-movement.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-movement.xml
+END
+base-instance-vocabularies.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-instance-vocabularies.xml
+END
+base-authz-permission.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authz-permission.xml
+END
+domain-authority-organization.xml
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authority-organization.xml
+END
+base-other-reporting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-reporting.xml
+END
+base-authz-users.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authz-users.xml
+END
+base-other-hierarchy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-hierarchy.xml
+END
+base-authority-location.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authority-location.xml
+END
+base-relations.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-relations.xml
+END
+base-procedure-intake.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-intake.xml
+END
+domain-procedure-groups.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-groups.xml
+END
+domain-procedure-loanout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-loanout.xml
+END
+base-procedure-media.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-media.xml
+END
+base-procedure-loanout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-loanout.xml
+END
+domain-authz-permrole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authz-permrole.xml
+END
+domain-procedure-movement.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-movement.xml
+END
+base-authority-taxon.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authority-taxon.xml
+END
+base-other-termlist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-termlist.xml
+END
+domain-procedure-objectexit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-objectexit.xml
+END
+base-schemas.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-schemas.xml
+END
+base-procedure-blobs.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-blobs.xml
+END
+domain-authority-location.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authority-location.xml
+END
+domain-procedure-loanin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-loanin.xml
+END
+base-other-dimension.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-dimension.xml
+END
+base-procedure-groups.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-groups.xml
+END
+domain-vocabularies.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-vocabularies.xml
+END
+domain-other-termlist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-other-termlist.xml
+END
+domain-collectionobject.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-collectionobject.xml
+END
+base-other-structureddate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-structureddate.xml
+END
+base-other-idgenerator.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-idgenerator.xml
+END
+domain-other-reporting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-other-reporting.xml
+END
+base-procedure-objectexit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-objectexit.xml
+END
+domain-authz-users.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authz-users.xml
+END
+domain-authority-person.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authority-person.xml
+END
+base-authz-userrole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authz-userrole.xml
+END
+domain-other-hierarchy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-other-hierarchy.xml
+END
+base-authz-role.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authz-role.xml
+END
+base-authz-userperm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authz-userperm.xml
+END
+base-other-termlistitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-other-termlistitem.xml
+END
+domain-procedure-media.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-media.xml
+END
+domain-authz-accountrole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authz-accountrole.xml
+END
+base-procedure-loanin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-procedure-loanin.xml
+END
+base-authz-accountrole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authz-accountrole.xml
+END
+domain-authority-taxon.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authority-taxon.xml
+END
+domain-authz-permission.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authz-permission.xml
+END
+domain-authority-contact.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authority-contact.xml
+END
+base-vocabularies.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-vocabularies.xml
+END
+base-authority-contact.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authority-contact.xml
+END
+base-collectionobject.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-collectionobject.xml
+END
+domain-procedure-blobs.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-blobs.xml
+END
+domain-authz-userrole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authz-userrole.xml
+END
+domain-authz-role.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authz-role.xml
+END
+settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/settings.xml
+END
+domain-authz-userperm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-authz-userperm.xml
+END
+base-authority-organization.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authority-organization.xml
+END
+base-authority-person.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/base-authority-person.xml
+END
+domain-procedure-intake.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-procedure-intake.xml
+END
+domain-other-termlistitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-other-termlistitem.xml
+END
+domain-other-reportingoutput.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/collection-space/!svn/ver/6214/src/application/tags/v2.0/tomcat-main/src/main/resources/defaults/domain-other-reportingoutput.xml
+END

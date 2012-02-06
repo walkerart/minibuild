@@ -1,0 +1,7 @@
+K 13
+svn:externals
+V 203
+https://source.collectionspace.org/collection-space/src/services/tags/v2.0/services/common/src/main/cspace/config/services/tenants/core/tenant-bindings.delta.xml    our-tenant/tenant-bindings.delta.xml
+
+
+END
