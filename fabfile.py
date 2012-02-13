@@ -12,7 +12,7 @@ def stop_server():
     "tomcat does not stop in time so we need to HUP it\
     to get a new pid to allow startup.sh to run"
     with settings(warn_only=True):
-        run('source ~/.bashrc && ' + CSPACE_JEESERVER_HOME+'/bin/shutdown.sh')
+        run('source ~/.bashrc && ' + CSPACE_JEESERVER_HOME+'/bin/shutdown.sh -force', pty=False)
     pid = get_pid()
     if not pid:
         print(red("no java process found"))
@@ -33,8 +33,11 @@ def rm_pid():
     # run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
 
 def start_server():
-    run('source ~/.bashrc && '+CSPACE_JEESERVER_HOME+'/bin/startup.sh')
+    run('source ~/.bashrc && '+CSPACE_JEESERVER_HOME+'/bin/startup.sh', pty=False)
     get_pid()
+
+def cat_log():
+    run("tail "+CSPACE_JEESERVER_HOME+"/logs/catalina.out", pty=False)
 
 def build():
     run('ant undeploy deploy')        
