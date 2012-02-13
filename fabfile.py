@@ -2,15 +2,14 @@ from fabric.api import *
 from fabric.colors import *
 
 env.user = 'ubuntu'
-# env.hosts = ['col.walkerart.org',]
+# env.hosts = ['col.walkerart.org',] #waiting for internal dns
 env.hosts = ['ec2-23-20-45-108.compute-1.amazonaws.com',]
 project_dir = '/home/ubuntu/src/v2.0/'
 minibuild_dir = '/home/ubuntu/src/minibuild/'
 CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
 
 def stop_server():
-    "tomcat does not stop in time so we need to HUP it\
-    to get a new pid to allow startup.sh to run"
+    "tomcat does not stop in time so we need to kill it"
     with settings(warn_only=True):
         run('source ~/.bashrc && ' + CSPACE_JEESERVER_HOME+'/bin/shutdown.sh -force', pty=False)
     pid = get_pid()
@@ -30,7 +29,6 @@ def get_pid():
 def rm_pid():
     run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
     run('rm '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
-    # run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
 
 def start_server():
     run('source ~/.bashrc && '+CSPACE_JEESERVER_HOME+'/bin/startup.sh', pty=False)
