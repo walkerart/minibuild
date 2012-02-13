@@ -38,7 +38,8 @@ def cat_log():
     run("tail "+CSPACE_JEESERVER_HOME+"/logs/catalina.out", pty=False)
 
 def build():
-    run('ant undeploy deploy')        
+    print( run('pwd', True))
+    run('ant undeploy deploy', pty=False)
 
 def git_pull():
     run('git pull origin custom')
@@ -52,7 +53,7 @@ def upgrade():
         start_server()
         
 def deploy(layer='application'):
-    directory = "{path}/tenant-customizations-v2.0/{layer}".\
+    directory = "{path}/{layer}".\
                   format(path=minibuild_dir,  layer=layer)
     with cd(minibuild_dir):
         git_pull()
