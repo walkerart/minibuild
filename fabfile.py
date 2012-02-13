@@ -1,20 +1,40 @@
 from fabric.api import *
+from fabric.colors import *
 
 env.user = 'ubuntu'
-env.hosts = ['col.walkerart.org',]
+# env.hosts = ['col.walkerart.org',]
+env.hosts = ['ec2-23-20-45-108.compute-1.amazonaws.com',]
 project_dir = '/home/ubuntu/src/v2.0/'
 minibuild_dir = '/home/ubuntu/src/minibuild/'
-
+CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
 
 def stop_server():
-    "tomcat does not stop in time so we need to HUP it"
+    "tomcat does not stop in time so we need to HUP it\
+    to get a new pid to allow startup.sh to run"
     with settings(warn_only=True):
-        run('$CSPACE_JEESERVER_HOME/bin/shutdown.sh')
-    pid = run("ps -C java | awk '{getline; print$1}'",True)
-    run('kill -HUP ' + pid)
+        run('source ~/.bashrc && ' + CSPACE_JEESERVER_HOME+'/bin/shutdown.sh')
+    pid = get_pid()
+    if not pid:
+        print(red("no java process found"))
+        return
+    puts(yellow("stopping pid " + pid))
+    with settings(warn_only=True):
+        run('kill -9 ' + pid)
+    rm_pid()
+
+def get_pid():
+    pid = run("ps -C java | grep java | awk '{print$1}'",True)
+    puts(green("pid = " + pid))
+    return pid
+
+def rm_pid():
+    run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
+    run('rm '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
+    # run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
 
 def start_server():
-    run('$CSPACE_JEESERVER_HOME/bin/startup.sh')
+    run('source ~/.bashrc && '+CSPACE_JEESERVER_HOME+'/bin/startup.sh')
+    get_pid()
 
 def build():
     run('ant undeploy deploy')        
