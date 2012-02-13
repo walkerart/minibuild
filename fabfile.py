@@ -44,6 +44,7 @@ def git_pull():
     run('git pull origin custom')
         
 def upgrade():
+    "this is for deploying schema changes"
     with cd(project_dir):
         git_pull()
         stop_server()
@@ -53,6 +54,8 @@ def upgrade():
 def deploy(layer='application'):
     directory = "{path}/tenant-customizations-v2.0/{layer}".\
                   format(path=minibuild_dir,  layer=layer)
+    with cd(minibuild_dir):
+        git_pull()
     stop_server()
     with cd(directory):
         build()
