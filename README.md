@@ -3,7 +3,7 @@
  Collectionspace 2.0 will need to be installed
 
 
-This project uses fabric to deploy to a remote machine 
+## Using fabric to deploy to a remote machine
 
 *  First fork this project
 *  then create a custom branch with `git checkout -b custom master`
