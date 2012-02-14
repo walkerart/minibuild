@@ -23,7 +23,6 @@ changes to the application layer should be immediate because of
 the hit_init fab task which logs into the server and initializes the 
 configs
 
-
 schema changes will need to be deployed with 
 [Services](http://github.com/collectionspace/services)
 
