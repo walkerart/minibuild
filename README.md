@@ -1,8 +1,7 @@
 # CollectionSpace Minibuild
  Use this project to configure Collectionspace 2.0
 
- Collectionspace 2.0 will need to be installed via this 
- [lengthy process](http://docs.collectionspace.org/)
+ Collectionspace 2.0 will need to be installed
 
 
 ## Using fabric to deploy to a remote machine
