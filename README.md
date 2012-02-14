@@ -17,11 +17,9 @@
 *  deploy with `fab deploy:ui`  or `fab deploy:application`
 
 
-deploy task defaults to application so `fab deploy` will work
+deploy task defaults to application
 
-changes to the application layer should be immediate because of 
-the hit_init fab task which logs into the server and initializes the 
-configs
+to reload the application configs locally run `fab hit_init:hosts=localhost`
 
 schema changes will need to be deployed with 
 [Services](http://github.com/collectionspace/services)
