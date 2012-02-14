@@ -1,12 +1,16 @@
 from fabric.api import (run,puts,local,env,cd,settings,prompt,open_shell)
 from fabric.colors import red,green,yellow,magenta
 
-env.user = 'ubuntu'
-# env.hosts = ['col.walkerart.org',] #waiting for internal dns
-env.hosts = ['ec2-23-20-45-108.compute-1.amazonaws.com',]
-env.http_port = '8180'
-project_dir = '/home/ubuntu/src/v2.0/'
-minibuild_dir = '/home/ubuntu/src/minibuild/'
+env.user = ''
+env.hosts = ['',]
+env.http_port = ''
+env.login_userid = ''# admin@....?
+
+# the root of this project/repo on the remote server:
+minibuild_dir = ''
+
+# from env variable in install instructions
+# http://wiki.collectionspace.org/display/UNRELEASED/Installing+CollectionSpace
 CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
 
 def stop_server():
@@ -58,7 +62,6 @@ def _build():
 def hit_init():
     "login to collectionspace and GET tenant init to reload the configs"
     env.cookie_file = "cookies.txt"
-    env.login_userid = 'admin@walkerart.org'
     env.login_password = prompt("enter password for {}:".format(env.login_userid))
     local("""\
           wget -q --keep-session-cookies --save-cookies {cookie_file} \
