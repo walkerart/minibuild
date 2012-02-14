@@ -4,14 +4,15 @@
 
 
 This project uses fabric to deploy to a remote machine 
-* First fork this project
-* then create a custom branch with
+
+*  First fork this project
+*  then create a custom branch with
 the fork may or may not come with a custom branch already
   `git checkout -b custom master`
-* Then edit the settings at the top of fabfile.py
-* use `fab -l` to see a list of commands to run 
-* push changes with `git push origin custom`
-* deploy with `fab deploy:ui`  or just `fab deploy`  instead of 
+*  Then edit the settings at the top of fabfile.py
+*  use `fab -l` to see a list of commands to run 
+*  push changes with `git push origin custom`
+*  deploy with `fab deploy:ui`  or just `fab deploy`  instead of 
 `fab deploy:application`
 because the deploy task defaults to application
 changes to the application layer should be immediate because of 
