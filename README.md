@@ -3,7 +3,7 @@
 
  Collectionspace 2.0 will need to be installed
 
- as well as (fabric)[http://docs.fabfile.org/]
+ as well as [fabric](http://docs.fabfile.org/)
 
 ## Using (fabric)[http://docs.fabfile.org/] to deploy to a remote machine
 
