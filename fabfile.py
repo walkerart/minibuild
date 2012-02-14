@@ -1,5 +1,5 @@
-from fabric.api import *
-from fabric.colors import *
+from fabric.api import (run,puts,local,env,cd,settings,prompt)
+from fabric.colors import red,green,yellow
 
 env.user = 'ubuntu'
 # env.hosts = ['col.walkerart.org',] #waiting for internal dns
@@ -10,7 +10,7 @@ minibuild_dir = '/home/ubuntu/src/minibuild/'
 CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
 
 def stop_server():
-    "tomcat does not stop in time so we need to kill it"
+    "runs shutdown.sh -force and kills tomcat"
     with settings(warn_only=True):
         run('source ~/.bashrc && ' + CSPACE_JEESERVER_HOME+'/bin/shutdown.sh -force', pty=False)
     pid = get_pid()
@@ -20,30 +20,32 @@ def stop_server():
     puts(yellow("stopping pid " + pid))
     with settings(warn_only=True):
         run('kill -9 ' + pid)
-    rm_pid()
+    _rm_pid()
 
 def get_pid():
+    "pid of java program (assuming cspace server)"
     pid = run("ps -C java | grep java | awk '{print$1}'",True)
     puts(green("pid = " + pid))
     return pid
 
-def rm_pid():
+def _rm_pid():
     run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
     run('rm '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
 
 def start_server():
+    "start collectionspace"
     run('source ~/.bashrc && '+CSPACE_JEESERVER_HOME+'/bin/startup.sh', pty=False)
     get_pid()
 
 def cat_log():
+    "see tail of catalina.out"
     run("tail "+CSPACE_JEESERVER_HOME+"/logs/catalina.out", pty=False)
 
-def build():
-    print( run('pwd', True))
+def _build():
     run('ant undeploy deploy', pty=False)
 
-# @hosts('localhost')
 def hit_init():
+    "login to collectionspace and GET tenant init to reload the configs"
     env.cookie_file = "cookies.txt"
     env.login_userid = 'admin@walkerart.org'
     env.login_password = prompt("enter password for {}:".format(env.login_userid))
@@ -70,24 +72,17 @@ def hit_init():
     local('rm ' + env.cookie_file)
 
 
-def git_pull():
+def _git_pull():
     run('git pull origin custom')
         
-def upgrade():
-    "this is for deploying schema changes"
-    with cd(project_dir):
-        git_pull()
-        stop_server()
-        build()
-        start_server()
-        
 def deploy(layer='application'):
+    "pull updates from git origin and load 'em up"
     directory = "{path}/{layer}".\
                   format(path=minibuild_dir,  layer=layer)
     with cd(minibuild_dir):
-        git_pull()
+        _git_pull()
     stop_server()
     with cd(directory):
-        build()
+        _build()
     start_server()
         
