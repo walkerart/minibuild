@@ -1,5 +1,5 @@
-from fabric.api import (run,puts,local,env,cd,settings,prompt)
-from fabric.colors import red,green,yellow
+from fabric.api import (run,puts,local,env,cd,settings,prompt,open_shell)
+from fabric.colors import red,green,yellow,magenta
 
 env.user = 'ubuntu'
 # env.hosts = ['col.walkerart.org',] #waiting for internal dns
@@ -17,10 +17,17 @@ def stop_server():
     if not pid:
         print(red("no java process found"))
         return
-    puts(yellow("stopping pid " + pid))
-    with settings(warn_only=True):
-        run('kill -9 ' + pid)
-    _rm_pid()
+
+    pids = pid.split('\r\n')
+    if len(pids) > 1:
+        puts(magenta("multiple pids found: " + ','.join(pids)))
+        puts(magenta("kill them yourself (exit when done)"))
+        open_shell()
+    else:
+        puts(yellow("stopping pid " + pid))
+        with settings(warn_only=True):
+            run('kill -9 ' + pid)
+    rm_pid()
 
 def get_pid():
     "pid of java program (assuming cspace server)"
@@ -28,14 +35,18 @@ def get_pid():
     puts(green("pid = " + pid))
     return pid
 
-def _rm_pid():
+def rm_pid():
     run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
     run('rm '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
 
 def start_server():
     "start collectionspace"
+    pid = get_pid()
+    if pid:
+        puts(yellow('server appears to be running; run stop_server first'))
+        return 
     run('source ~/.bashrc && '+CSPACE_JEESERVER_HOME+'/bin/startup.sh', pty=False)
-    get_pid()
+    pid = get_pid()
 
 def cat_log():
     "see tail of catalina.out"
