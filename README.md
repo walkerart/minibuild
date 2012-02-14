@@ -5,7 +5,7 @@
 
  as well as (fabric)[http://docs.fabfile.org/]
 
-## Using fabric to deploy to a remote machine
+## Using (fabric)[http://docs.fabfile.org/] to deploy to a remote machine
 
 *  First fork this project
 *  then create a custom branch with `git checkout -b custom master`
