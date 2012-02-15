@@ -2,6 +2,8 @@ from fabric.api import (puts,env,cd,settings,prompt,open_shell, hosts)
 from fabric.api import local as wrapped_local
 from fabric.api import run as wrapped_run
 from fabric.colors import red,green,yellow,magenta
+from lxml import objectify
+from BeautifulSoup import BeautifulStoneSoup
 
 env.user = 'ubuntu'
 env.hosts = ['ec2-23-20-45-108.compute-1.amazonaws.com',]
@@ -9,6 +11,7 @@ env.http_port = '8180'
 env.CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
 env.service_identifier = 'wac-collectionspace'
 env.tenant = 'walkerart'
+env.login_userid = 'admin@walkerart.org'
 
 project_dir = '/home/ubuntu/src/v2.0/'
 minibuild_dir = '/home/ubuntu/src/minibuild/'
@@ -73,7 +76,6 @@ def _build():
 def _get_cookie():
     "login to collectionspace and GET tenant init to reload the configs"
     env.cookie_file = "cookies.txt"
-    env.login_userid = 'admin@walkerart.org'
     env.login_password = prompt("enter password for {}:".format(env.login_userid))
     llocal("""\
           wget -q --keep-session-cookies --save-cookies {cookie_file} \
@@ -130,3 +132,58 @@ def deploy(layer='application'):
     with cd(directory):
         _build()
     start_server()
+
+
+def get_authority(authority):
+    "use the ?authorities naming style; so org for orgauthorities and person for personauthorities"
+    env.authorities = authority + 'authorities'
+    env.login_password = prompt("enter password for {}:".format(env.login_userid))
+    llocal('wget --user={login_userid} --password={login_password} --keep-session-cookies \
+           http://{host_string}:{http_port}/cspace-services/{authorities} -O authorities.xml ')
+
+    string = open('authorities.xml').read()
+    tree = objectify.fromstring(string)
+    items = [(item.displayName,item.csid)  for item in tree.findall('list-item')]
+    item = filter(lambda item: 'Test' not in str(item[0]), items)
+    csid = item[0][1]
+    _compose_post_data(authority)
+    _post_authority(authority,csid)
+    llocal('rm authorities.xml')
+    llocal('rm {}authority.xml'.format(authority))
+
+
+def _compose_post_data(authority):
+    string = open('authority_template.xml').read()
+    new_file = open(authority +'authority.xml', "w")
+    env.doctype = authority
+    env.schema_name = authority + 's_' + 'common'
+    env.displayname = authority.capitalize()
+    env.short_display_name = authority[:3]
+    env.description = 'test authority'
+    env.tenant_schema_name = authority + 's_' + env.tenant
+    env.content = '<employer>Mr. Testy</employer> \
+                   <assistant>Mr. Helper</assistant>'
+    doc = string.format(**env)
+    new_file.write(doc)
+    new_file.close()
+
+
+def _post_authority(authority,csid):
+    "use the name of the xml file in this directory without the .xml"
+    env.authorities = authority + 'authorities'
+    env.authority = authority
+    env.csid = csid
+    response = llocal("curl -i -u {login_userid}:{login_password} -X POST -H \"Content-Type: application/xml\" \
+           http://{host_string}:{http_port}/cspace-services/{authorities}/{csid}/items \
+           -T {authority}authority.xml", True)
+    import ipdb; ipdb.set_trace()
+    tuples = filter(lambda t: ': ' in t, response.split('\r\n'))
+    dd = dict(map(lambda string: tuple(string.split(': ')) , tuples))
+    _view_authority(dd['Location'])
+
+def _view_authority(location):
+    env.location = location
+    response = llocal("curl -i -u {login_userid}:{login_password} \
+           {location} ", True)
+    soup = BeautifulStoneSoup(response)
+    print soup.prettify()

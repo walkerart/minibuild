@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document name="{doctype}">
+    <ns2:{schema_name} xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://collectionspace.org/services/{doctype}" xsi:schemaLocation="http://collectionspace.org/services/{doctype}">
+        <displayName>{displayname}</displayName>
+        <displayNameComputed>false</displayNameComputed>
+        <shortDisplayName>{short_display_name}</shortDisplayName>
+        <shortDisplayNameComputed>false</shortDisplayNameComputed>
+        <description>{description}</description>
+    </ns2:{schema_name}>
+
+    <!-- lets assume nothing is required in the tenant schema -->
+    <ns2:{tenant_schema_name} xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://collectionspace.org/services/{doctype}/local/{tenant}" xsi:schemaLocation="http://collectionspace.org/services/{doctype}/local/{tenant}">
+         {content}
+    </ns2:{tenant_schema_name}>
+</document>
