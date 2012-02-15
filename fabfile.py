@@ -1,18 +1,24 @@
-from fabric.api import (run,puts,local,env,cd,settings,prompt,open_shell)
+from fabric.api import (puts,env,cd,settings,prompt,open_shell)
+from fabric.api import local as wrapped_local
+from fabric.api import run as wrapped_run
 from fabric.colors import red,green,yellow,magenta
 
 env.user = 'ubuntu'
-# env.hosts = ['col.walkerart.org',] #waiting for internal dns
 env.hosts = ['ec2-23-20-45-108.compute-1.amazonaws.com',]
 env.http_port = '8180'
+env.CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
+env.service_identifier = 'wac-collectionspace'
+
 project_dir = '/home/ubuntu/src/v2.0/'
 minibuild_dir = '/home/ubuntu/src/minibuild/'
-CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
+
+rrun   = lambda string,*args,**kwargs: wrapped_run(string.format(**env), *args,**kwargs)
+llocal = lambda string,*args,**kwargs: wrapped_local(string.format(**env), *args,**kwargs)
 
 def stop_server():
     "runs shutdown.sh -force and kills tomcat"
     with settings(warn_only=True):
-        run('source ~/.bashrc && ' + CSPACE_JEESERVER_HOME+'/bin/shutdown.sh -force', pty=False)
+        rrun('source ~/.bashrc &&  {CSPACE_JEESERVER_HOME}/bin/shutdown.sh -force', pty=False)
     pid = get_pid()
     if not pid:
         print(red("no java process found"))
@@ -26,18 +32,18 @@ def stop_server():
     else:
         puts(yellow("stopping pid " + pid))
         with settings(warn_only=True):
-            run('kill -9 ' + pid)
+            rrun('kill -9 ' + pid)
     rm_pid()
 
 def get_pid():
     "pid of java program (assuming cspace server)"
-    pid = run("ps -C java | grep java | awk '{print$1}'",True)
+    pid = rrun("ps ww -C java | grep {service_identifier} | awk '{{print$1}}'",True)
     puts(green("pid = " + pid))
     return pid
 
 def rm_pid():
-    run('touch '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
-    run('rm '+ CSPACE_JEESERVER_HOME +'/bin/tomcat.pid')
+    rrun('touch {CSPACE_JEESERVER_HOME}/bin/tomcat.pid')
+    rrun('rm {CSPACE_JEESERVER_HOME}/bin/tomcat.pid')
 
 def start_server():
     "start collectionspace"
@@ -45,22 +51,22 @@ def start_server():
     if pid:
         puts(yellow('server appears to be running; run stop_server first'))
         return 
-    run('source ~/.bashrc && '+CSPACE_JEESERVER_HOME+'/bin/startup.sh', pty=False)
+    rrun('source ~/.bashrc && {CSPACE_JEESERVER_HOME}/bin/startup.sh -dservice.identifier={service_identifier}', pty=False)
     pid = get_pid()
 
 def cat_log():
     "see tail of catalina.out"
-    run("tail "+CSPACE_JEESERVER_HOME+"/logs/catalina.out", pty=False)
+    rrun("tail {CSPACE_JEESERVER_HOME}/logs/catalina.out", pty=False)
 
 def _build():
-    run('ant undeploy deploy', pty=False)
+    rrun('ant undeploy deploy', pty=False)
 
 def hit_init():
     "login to collectionspace and GET tenant init to reload the configs"
     env.cookie_file = "cookies.txt"
     env.login_userid = 'admin@walkerart.org'
     env.login_password = prompt("enter password for {}:".format(env.login_userid))
-    local("""\
+    llocal("""\
           wget -q --keep-session-cookies --save-cookies {cookie_file} \
           --post-data "userid={login_userid}&password={login_password}" \
           http://{host_string}:{http_port}/collectionspace/tenant/walkerart/login \
@@ -74,17 +80,17 @@ def hit_init():
         print(red("not logged in! wrong password?"))
         return 
 
-    local("""\
+    llocal("""\
           wget --keep-session-cookies --load-cookies {cookie_file} \
           http://{host_string}:{http_port}/collectionspace/tenant/walkerart/init \
           -O - \
           """.format(**env))
 
-    local('rm ' + env.cookie_file)
+    llocal('rm ' + env.cookie_file)
 
 
 def _git_pull():
-    run('git pull origin custom')
+    rrun('git pull origin custom')
         
 def deploy(layer='application'):
     "pull updates from git origin and load 'em up"
