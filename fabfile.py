@@ -1,4 +1,4 @@
-from fabric.api import (puts,env,cd,settings,prompt,open_shell)
+from fabric.api import (puts,env,cd,settings,prompt,open_shell, hosts)
 from fabric.api import local as wrapped_local
 from fabric.api import run as wrapped_run
 from fabric.colors import red,green,yellow,magenta
@@ -8,13 +8,21 @@ env.hosts = ['ec2-23-20-45-108.compute-1.amazonaws.com',]
 env.http_port = '8180'
 env.CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
 env.service_identifier = 'wac-collectionspace'
+env.tenant = 'walkerart'
 
 project_dir = '/home/ubuntu/src/v2.0/'
 minibuild_dir = '/home/ubuntu/src/minibuild/'
 
 rrun   = lambda string,*args,**kwargs: wrapped_run(string.format(**env), *args,**kwargs)
 llocal = lambda string,*args,**kwargs: wrapped_local(string.format(**env), *args,**kwargs)
-
+        
+def login(func):
+    def logged_in(*args,**kwargs):
+        _login()
+        func(*args,**kwargs)
+        llocal('rm ' + env.cookie_file)
+    return logged_in
+    
 def stop_server():
     "runs shutdown.sh -force and kills tomcat"
     with settings(warn_only=True):
@@ -61,7 +69,7 @@ def cat_log():
 def _build():
     rrun('ant undeploy deploy', pty=False)
 
-def hit_init():
+def _login():
     "login to collectionspace and GET tenant init to reload the configs"
     env.cookie_file = "cookies.txt"
     env.login_userid = 'admin@walkerart.org'
@@ -71,23 +79,31 @@ def hit_init():
           --post-data "userid={login_userid}&password={login_password}" \
           http://{host_string}:{http_port}/collectionspace/tenant/walkerart/login \
           -O /dev/null \
-          """.format(**env))
+          """)
 
     cookie = open(env.cookie_file).readlines().pop()
     if "CSPACESESSID" in cookie:
         print(green("logged in successfully"))
     else:
         print(red("not logged in! wrong password?"))
-        return 
+        exit
 
+@login
+def hit_tenant_init():
     llocal("""\
           wget --keep-session-cookies --load-cookies {cookie_file} \
           http://{host_string}:{http_port}/collectionspace/tenant/walkerart/init \
           -O - \
-          """.format(**env))
+          """)
 
-    llocal('rm ' + env.cookie_file)
-
+@hosts('localhost')
+@login
+def local_init():
+    "hit authorities/initialise and authorities/vocab/initialize"
+    llocal('wget  --keep-session-cookies --load-cookies {cookie_file} \
+           http://{host_string}:{http_port}/collectionspace/tenant/{tenant}/authorities/initialise -O -')
+    llocal('wget  --keep-session-cookies --load-cookies {cookie_file} \
+           http://{host_string}:{http_port}/collectionspace/tenant/{tenant}/authorities/vocab/initialize -O - ')#!!z!!
 
 def _git_pull():
     rrun('git pull origin custom')
@@ -102,4 +118,3 @@ def deploy(layer='application'):
     with cd(directory):
         _build()
     start_server()
-        
