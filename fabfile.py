@@ -36,7 +36,7 @@ def stop_server():
     rm_pid()
 
 def get_pid():
-    "pid of java program (assuming cspace server)"
+    "pid of java program using unique identifier"
     pid = rrun("ps ww -C java | grep {service_identifier} | awk '{{print$1}}'",True)
     puts(green("pid = " + pid))
     return pid
