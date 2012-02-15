@@ -16,9 +16,10 @@ minibuild_dir = '/home/ubuntu/src/minibuild/'
 rrun   = lambda string,*args,**kwargs: wrapped_run(string.format(**env), *args,**kwargs)
 llocal = lambda string,*args,**kwargs: wrapped_local(string.format(**env), *args,**kwargs)
         
-def login(func):
+def _login(func):
+    "decorator which uses a session cookie"
     def logged_in(*args,**kwargs):
-        _login()
+        _get_cookie()
         func(*args,**kwargs)
         llocal('rm ' + env.cookie_file)
     return logged_in
@@ -69,7 +70,7 @@ def cat_log():
 def _build():
     rrun('ant undeploy deploy', pty=False)
 
-def _login():
+def _get_cookie():
     "login to collectionspace and GET tenant init to reload the configs"
     env.cookie_file = "cookies.txt"
     env.login_userid = 'admin@walkerart.org'
@@ -88,22 +89,33 @@ def _login():
         print(red("not logged in! wrong password?"))
         exit
 
-@login
-def hit_tenant_init():
+@hosts('localhost')
+def local_tenant_init():
+    "shortcut of tenant_init for localhost"
+    tenant_init()
+
+@_login
+def tenant_init():
+    "hit tenant/{tenant}/init to reload configs"
     llocal("""\
           wget --keep-session-cookies --load-cookies {cookie_file} \
-          http://{host_string}:{http_port}/collectionspace/tenant/walkerart/init \
+          http://{host_string}:{http_port}/collectionspace/tenant/{tenant}/init \
           -O - \
           """)
 
 @hosts('localhost')
-@login
 def local_init():
+    "shortcut of auth_init for localhost"
+    auth_init()
+
+@_login
+def auth_init():
     "hit authorities/initialise and authorities/vocab/initialize"
     llocal('wget  --keep-session-cookies --load-cookies {cookie_file} \
            http://{host_string}:{http_port}/collectionspace/tenant/{tenant}/authorities/initialise -O -')
     llocal('wget  --keep-session-cookies --load-cookies {cookie_file} \
            http://{host_string}:{http_port}/collectionspace/tenant/{tenant}/authorities/vocab/initialize -O - ')#!!z!!
+
 
 def _git_pull():
     rrun('git pull origin custom')
