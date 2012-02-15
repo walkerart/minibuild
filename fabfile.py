@@ -134,7 +134,7 @@ def deploy(layer='application'):
     start_server()
 
 
-def get_authority(authority):
+def test_authority(authority):
     "use the ?authorities naming style; so org for orgauthorities and person for personauthorities"
     env.authorities = authority + 'authorities'
     env.login_password = prompt("enter password for {}:".format(env.login_userid))
