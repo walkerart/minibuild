@@ -147,14 +147,14 @@ def get_authority(authority):
     item = filter(lambda item: 'Test' not in str(item[0]), items)
     csid = item[0][1]
     _compose_post_data(authority)
-    _post_authority(authority,csid)
+    _post_item_to_authority(authority,csid)
     llocal('rm authorities.xml')
-    llocal('rm {}authority.xml'.format(authority))
+    llocal('rm {}.xml'.format(authority))
 
 
 def _compose_post_data(authority):
     string = open('authority_template.xml').read()
-    new_file = open(authority +'authority.xml', "w")
+    new_file = open(authority + '.xml', "w")
     env.doctype = authority
     env.schema_name = authority + 's_' + 'common'
     env.displayname = authority.capitalize()
@@ -168,20 +168,19 @@ def _compose_post_data(authority):
     new_file.close()
 
 
-def _post_authority(authority,csid):
+def _post_item_to_authority(authority,csid):
     "use the name of the xml file in this directory without the .xml"
     env.authorities = authority + 'authorities'
     env.authority = authority
     env.csid = csid
     response = llocal("curl -i -u {login_userid}:{login_password} -X POST -H \"Content-Type: application/xml\" \
            http://{host_string}:{http_port}/cspace-services/{authorities}/{csid}/items \
-           -T {authority}authority.xml", True)
-    import ipdb; ipdb.set_trace()
+           -T {authority}.xml", True)
     tuples = filter(lambda t: ': ' in t, response.split('\r\n'))
     dd = dict(map(lambda string: tuple(string.split(': ')) , tuples))
-    _view_authority(dd['Location'])
+    _view_item(dd['Location'])
 
-def _view_authority(location):
+def _view_item(location):
     env.location = location
     response = llocal("curl -i -u {login_userid}:{login_password} \
            {location} ", True)
