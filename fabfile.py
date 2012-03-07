@@ -152,7 +152,7 @@ def _get_cookie():
 @_login
 def tenant_init():
     "hit tenant/{tenant}/init to reload configs"
-    llocal(wget + tenant + '/init' + '-O -')
+    llocal(wget + tenant + '/init' + ' -O-')
 
 @_login
 def auth_init():
@@ -160,15 +160,15 @@ def auth_init():
     llocal(wget + tenant + '/authorities/initialise' + ' -O -')
     llocal(wget + tenant +'/authorities/vocab/initialize' + ' -O - ')#!!z!!
 
-def test_authority(authority):
+def test_authority(authority,field_name=None):
     "use the ?authorities naming style; so org for orgauthorities and person for personauthorities"
+    env.field_name = field_name
     if authority == 'organization':
         env.authorities = 'org' + 'authorities'
     else:
         env.authorities = authority + 'authorities'
     env.authority = authority
     env.login_password = prompt("enter password for {}:".format(env.login_userid))
-    _compose_post_data(authority)
     authorities_list = llocal('wget --user={login_userid} --password={login_password}\
                               --keep-session-cookies \
                               http://{host_string}:{http_port}/cspace-services/{authorities}\
@@ -182,14 +182,21 @@ def _find_default_authority_csid(string):
     tree = objectify.fromstring(string)
     items = [(item.displayName,item.csid)  for item in tree.findall('list-item')]
     item = filter(lambda item: 'Test' not in str(item[0]), items)
+    if not item:
+        print red("did you forget to run auth_init?")
+        print red( "csid not found in:\n\n") + BeautifulStoneSoup(string).prettify()
+        exit()
     csid = item[0][1]
     return csid
 
 def _compose_post_data(authority):
-    string = open('authority_template.xml').read()
+    try:
+        string = open('authority_template.xml').read()
+    except:
+        string = open('../minibuild/authority_template.xml').read()
     new_file = open(authority + '.xml', "w")
-    env.doctype = authority
-    env.schema_name = authority + 's_' + 'common'
+    env.doctype = env.authority
+    env.schema_name = env.authority + 's_' + 'common'
     env.displayname = authority.capitalize()
     env.short_display_name = authority[:3]
     env.description = 'test authority'
@@ -205,6 +212,7 @@ def _compose_post_data(authority):
 
 def _post_item_to_authority(authority,csid):
     "use the name of the xml file in this directory without the .xml"
+    _compose_post_data(authority)
     env.csid = csid
     response = llocal("curl -i -u {login_userid}:{login_password} -X POST -H \"Content-Type: application/xml\" \
            http://{host_string}:{http_port}/cspace-services/{authorities}/{csid}/items \
@@ -212,7 +220,7 @@ def _post_item_to_authority(authority,csid):
     tuples = filter(lambda t: ': ' in t, response.split('\r\n'))
     dd = dict(map(lambda string: tuple(string.split(': ')) , tuples))
     if 'Location' not in dd:
-        puts(red('Create Request Failed'))
+        puts(red('Create Request Failed:\n\n') + response)
         puts(response)
         return False
     else:
@@ -220,9 +228,14 @@ def _post_item_to_authority(authority,csid):
         return True
 
 
-def _view_item(location):
+def _view_item(location, ):
     env.location = location
     response = llocal("curl -i -u {login_userid}:{login_password} \
            {location} ", True)
     soup = BeautifulStoneSoup(response)
+    if env.field_name in soup:
+        print(green("Found it: "))
+    else:
+        print(red("Not Found: "))
     print soup.prettify()
+
