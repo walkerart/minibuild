@@ -4,11 +4,12 @@ from fabric.api import run as wrapped_run
 from fabric.colors import red,green,yellow,magenta
 from lxml import objectify
 from BeautifulSoup import BeautifulStoneSoup
-
+import time
 env.user = 'ubuntu'
 env.hosts = ['ec2-23-20-45-108.compute-1.amazonaws.com',]
 env.http_port = '8180'
 env.CSPACE_JEESERVER_HOME = '/usr/local/share/apache-tomcat-6.0.33'
+env.CATALINA_PID="/usr/local/share/apache-tomcat-6.0.33/bin/tomcat.pid"
 env.service_identifier = 'wac-collectionspace'
 env.tenant = 'walkerart'
 env.login_userid = 'admin@walkerart.org'
@@ -99,6 +100,12 @@ def _build():
 def _git_pull():
     rrun('git pull origin custom')
         
+def local_restart_server():
+    llocal('{CSPACE_JEESERVER_HOME}/bin/shutdown.sh')
+    llocal('kill -9 `cat {CATALINA_PID}`')
+    time.sleep(3)
+    llocal('{CSPACE_JEESERVER_HOME}/bin/startup.sh')
+
 
 ##################
 # local utils
@@ -198,12 +205,12 @@ def _compose_post_data(authority):
     env.doctype = env.authority
     env.schema_name = env.authority + 's_' + 'common'
     env.displayname = authority.capitalize()
-    env.short_display_name = authority[:3]
+    env.short_display_name = authority #?what
     env.description = 'test authority'
     env.tenant_schema_name = authority + 's_' + env.tenant
     # env.content = '<employer>Mr. Testy</employer> \
     #                <assistant>Mr. Helper</assistant>'
-    env.content = '<fakeName>Mr. Testy</fakeName>'
+    env.content = '<onView>never</onView>'
 
     doc = string.format(**env)
     new_file.write(doc)
