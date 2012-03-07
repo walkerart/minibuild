@@ -74,7 +74,11 @@ def deploy_services():
         _build()
         rrun('source ~/.bashrc && ant create_db import')
     start_server()
-    
+
+def print_env():
+    output = rrun('env')
+    print output
+
 def get_pid(func=rrun):
     "pid of java program using unique identifier"
     pid = func("ps ww -C java | grep {service_identifier} | awk '{{print$1}}'",True)
