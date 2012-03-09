@@ -115,6 +115,11 @@
                     <field id="initials">
                         <selector>personAuthority-initials</selector>
                     </field>
+
+                    <field id="employer">
+                        <selector>personAuthority-employer</selector>
+                    </field>
+
                     <field id="gender" ui-search="repeatable" seperate_ui_container="true">
                         <selector>personAuthority-gender</selector>
                         <options>
