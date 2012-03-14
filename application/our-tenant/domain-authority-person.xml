@@ -1,7 +1,5 @@
 <root>
-  <!-- <services-record-path id="walkerart"> -->
-  <!--   persons_walkerart:http://collectionspace.org/services/person/domain/walkerart,persons_walkerart -->
-  <!-- </services-record-path> -->
+  <services-record-path id="walkerart">persons_walkerart:http://collectionspace.org/services/person/local/walkerart,persons_walkerart</services-record-path>
 
 
   <section id="domaindata">
