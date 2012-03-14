@@ -1,8 +1,18 @@
 <root>
   <services-record-path id="walkerart">persons_walkerart:http://collectionspace.org/services/person/local/walkerart,persons_walkerart</services-record-path>
 
+  <section id="personNameAuthorityInformation">
+    <field id="employer" section="walkerart">
+    	<selector>personAuthority-employer</selector>
+    </field>
 
-  <section id="domaindata">
-    <field id="employer" section="walkerart"></field>
+    <field id="assistant" section="walkerart">
+    	<selector>personAuthority-assistant</selector>
+    </field>
+
+    <field id="employerDelete" section="walkerart">
+    	<selector>personAuthority-employerDelete</selector>
+    </field>
+
   </section>
 </root>
