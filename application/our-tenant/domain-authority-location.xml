@@ -1,0 +1,14 @@
+<root>
+  <services-record-path id="walkerart">locations_walkerart:http://collectionspace.org/services/location/local/walkerart,locations_walkerart</services-record-path>
+
+  <section id="locationNameAuthorityInformation">
+    <field id="onview" section="walkerart">
+    	<selector>locationAuthority-onview</selector>
+    </field>
+
+    <field id="gallery" section="walkerart">
+    	<selector>locationAuthority-gallery</selector>
+    </field>
+
+  </section>
+</root>
