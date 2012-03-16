@@ -13,7 +13,7 @@ env.CATALINA_PID="/usr/local/share/apache-tomcat-6.0.33/bin/tomcat.pid"
 env.service_identifier = 'wac-collectionspace'
 env.tenant = 'walkerart'
 env.login_userid = 'admin@walkerart.org'
-
+env.password = 'Administrator'
 services_dir = '/home/ubuntu/src/v2.0/'
 minibuild_dir = '/home/ubuntu/src/minibuild/'
 
