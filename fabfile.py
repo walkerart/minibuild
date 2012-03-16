@@ -178,7 +178,8 @@ def test_authority(authority,field_name=None):
     else:
         env.authorities = authority + 'authorities'
     env.authority = authority
-    env.login_password = prompt("enter password for {}:".format(env.login_userid))
+    # env.login_password = prompt("enter password for {}:".format(env.login_userid))
+    env.login_password = env['password']
     authorities_list = llocal('wget --user={login_userid} --password={login_password}\
                               --keep-session-cookies \
                               http://{host_string}:{http_port}/cspace-services/{authorities}\
