@@ -134,13 +134,16 @@ def local_start_server():
     "shortcut of start_server for localhost"
     start_server(llocal)
 
-wget = "wget --keep-session-cookies --load-cookies {cookie_file} "
-tenant = "http://{host_string}:{http_port}/collectionspace/tenant/{tenant}"
+wget = " wget --keep-session-cookies --load-cookies {cookie_file} "
+tenant = " http://{host_string}:{http_port}/collectionspace/tenant/{tenant}"
+# server doesn't prompt for encoding scheme; (basic,digest or NTLM)
+# wget_auth = ' --http-user={login_userid} --http-password={password} '
 
 def _get_cookie():
     "login to collectionspace and GET tenant init to reload the configs"
     env.cookie_file = "cookies.txt"
-    env.login_password = prompt("enter password for {}:".format(env.login_userid))
+    # env.login_password = prompt("enter password for {}:".format(env.login_userid))
+    env.login_password = env['password']
     llocal("""\
           wget -q --keep-session-cookies --save-cookies {cookie_file} \
           --post-data "userid={login_userid}&password={login_password}" \
