@@ -173,8 +173,17 @@ def auth_init():
 def test_authority(authority,field_name=None):
     "use the ?authorities naming style; so org for orgauthorities and person for personauthorities"
     env.field_name = field_name
+    env.authority = authority    
+    find_table = "psql -U catalina nuxeo -c '\d' | grep {authority}s_{tenant}"
+    if env.host_string == 'localhost':
+        with settings(warn_only= True):
+            exists = llocal(find_table)
+            if exists.failed:
+                print red('table not in db')
+                return
     if authority == 'organization':
         env.authorities = 'org' + 'authorities'
+
     else:
         env.authorities = authority + 'authorities'
     env.authority = authority
