@@ -167,8 +167,8 @@ def tenant_init():
 @_login
 def auth_init():
     "hit authorities/initialise and authorities/vocab/initialize"
-    llocal(wget + tenant + '/authorities/initialise' + ' -O -')
-    llocal(wget + tenant +'/authorities/vocab/initialize' + ' -O - ')#!!z!!
+    llocal(wget  + tenant + '/authorities/initialise' + ' -O -')
+    llocal(wget  + tenant +'/authorities/vocab/initialize' + ' -O - ')#!!lize!!
 
 def test_authority(authority,field_name=None):
     "use the ?authorities naming style; so org for orgauthorities and person for personauthorities"
@@ -186,8 +186,8 @@ def test_authority(authority,field_name=None):
     csid = _find_default_authority_csid(authorities_list)
     success = _post_item_to_authority(authority,csid)
     if success:
-        llocal('rm {}.xml'.format(authority))
-
+        # llocal('rm {}.xml'.format(authority))
+        pass
 def _find_default_authority_csid(string):
     tree = objectify.fromstring(string)
     items = [(item.displayName,item.csid)  for item in tree.findall('list-item')]
@@ -209,11 +209,9 @@ def _compose_post_data(authority):
     env.schema_name = env.authority + 's_' + 'common'
     env.displayname = authority.capitalize()
     env.short_display_name = authority #?what
-    env.description = 'test authority'
+    env.description = 'my authority'
     env.tenant_schema_name = authority + 's_' + env.tenant
-    # env.content = '<employer>Mr. Testy</employer> \
-    #                <assistant>Mr. Helper</assistant>'
-    env.content = '<onView>never</onView>'
+    env.content = '<{field_name}>somthing</{field_name}>'.format(**env)
 
     doc = string.format(**env)
     new_file.write(doc)
@@ -243,9 +241,8 @@ def _view_item(location, ):
     response = llocal("curl -i -u {login_userid}:{login_password} \
            {location} ", True)
     soup = BeautifulStoneSoup(response)
-    if env.field_name in soup:
-        print(green("Found it: "))
+    if env.field_name and env.field_name in str(soup):
+        print(green("Found it: "+ str(soup(env.field_name))))
     else:
         print(red("Not Found: "))
-    print soup.prettify()
 
