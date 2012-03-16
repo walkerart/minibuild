@@ -19,11 +19,11 @@ minibuild_dir = '/home/ubuntu/src/minibuild/'
 
 rrun   = lambda string,*args,**kwargs: wrapped_run(string.format(**env), *args,**kwargs)
 llocal = lambda string,*args,**kwargs: wrapped_local(string.format(**env), *args,**kwargs)
-        
+
 def stop_server():
     "runs shutdown.sh -force and kills tomcat"
     with settings(warn_only=True):
-        rrun('source ~/.bashrc &&  {CSPACE_JEESERVER_HOME}/bin/shutdown.sh -force', pty=False)
+        rrun('source ~/.bashrc &&  {CSPACE_JEESERVER_HOME}/bin/shutdown.sh -force')
     pid = get_pid()
     if not pid:
         print(red("no java process found"))
@@ -95,7 +95,7 @@ def cat_log():
     rrun("tail {CSPACE_JEESERVER_HOME}/logs/catalina.out", pty=False)
 
 def _build():
-    rrun('source ~/.bashrc && ant undeploy deploy', pty=False)
+    rrun('source ~/.bashrc && ant undeploy deploy')
 
 def _git_pull():
     rrun('git pull origin custom')
