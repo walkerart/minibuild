@@ -9,6 +9,7 @@
     <services-list-path>http://collectionspace.org/services/location,abstract-common-list/list-item</services-list-path>
     <services-record-path>locations_common:http://collectionspace.org/services/location,locations_common</services-record-path>
     <services-record-path id="collectionspace_core">collectionspace_core:http://collectionspace.org/collectionspace_core/,collectionspace_core</services-record-path>
+
     <services-url>locationauthorities</services-url>
     <authority-vocab-type>LocationAuthority</authority-vocab-type>
     <hassoftdelete>true</hassoftdelete>
@@ -31,7 +32,7 @@
         </structure>
     </structures>
 				
-	<include src="domain-authority-location.xml" />
+	<include src="domain-authority-location.xml" strip-root='yes'/>
 				
     <instances>
         <instance id="location-location">
