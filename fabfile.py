@@ -1,4 +1,4 @@
-from fabric.api import (puts,env,cd,settings,prompt,open_shell, hosts)
+from fabric.api import (puts,env,cd,settings,open_shell, hosts)
 from fabric.api import local as wrapped_local
 from fabric.api import run as wrapped_run
 from fabric.colors import red,green,yellow,magenta
@@ -14,7 +14,7 @@ env.service_identifier = 'wac-collectionspace'
 env.tenant = 'walkerart'
 env.login_userid = 'admin@walkerart.org'
 env.password = 'Administrator'
-services_dir = '/home/ubuntu/src/v2.0/'
+services_dir = '/home/ubuntu/src/services/'
 minibuild_dir = '/home/ubuntu/src/minibuild/'
 
 rrun   = lambda string,*args,**kwargs: wrapped_run(string.format(**env), *args,**kwargs)
@@ -73,7 +73,7 @@ def deploy_services():
     with cd(services_dir):
         _git_pull()
         _build()
-        rrun('source ~/.bashrc && ant create_db import')
+        rrun('ant create_db import')
     start_server()
 
 def print_env():
@@ -92,10 +92,10 @@ def rm_pid():
 
 def cat_log():
     "see tail of catalina.out"
-    rrun("tail {CSPACE_JEESERVER_HOME}/logs/catalina.out", pty=False)
+    rrun("tail {CSPACE_JEESERVER_HOME}/logs/catalina.out",)
 
 def _build():
-    rrun('source ~/.bashrc && ant undeploy deploy')
+    rrun('ant undeploy deploy')
 
 def _git_pull():
     rrun('git pull origin custom')
