@@ -1,0 +1,27 @@
+<root>
+  <services-record-path id="walkerart">collectionobjects_walkerart:http://collectionspace.org/services/collectionobject/local/walkerart,collectionobjects_walkerart</services-record-path>
+
+  <section id="collectionobjectNameAuthorityInformation">
+    <field id="collection" section="walkerart">
+    	<selector>collectionobject-collection</selector>
+    </field>
+
+    <field id="format" section="walkerart">
+    	<selector>collectionobject-format</selector>
+    </field>
+
+    <field id="status" section="walkerart">
+    	<selector>collectionobject-status</selector>
+    </field>
+    <field id="notes" section="walkerart">
+    	<selector>collectionobject-notes</selector>
+    </field>
+    <field id="date" section="walkerart" ui-type="date">
+    	<selector>collectionobject-date</selector>
+    </field>
+    <field id="faRelatedWorkLabel" section="finearts">
+    	<selector>collectionobject-faRelatedWorkLabel</selector>
+    </field>
+
+  </section>
+</root>
