@@ -1,0 +1,104 @@
+<div class="csc-cataloging-template">
+    <div class="csc-cataloging csc-listEditor-details">
+        <div id="secondary-nav">
+            <div id="secondary-nav-menu-sub">
+                <div class="button-row">
+                    <a style="display:none;" class="csc-goto gotoButton"></a>
+                    <input type="button" class="csc-createFromExisting createFromExistingButton" />
+                    <input type="button" class="csc-cancel cancelButton" />
+                    <input type="button" class="csc-delete deleteButton" />
+                    <input type="button" class="csc-save saveButton" />
+                </div>
+                <div class="time-stamp"> </div>
+            </div>
+        </div>
+
+        <div class="csc-templateEditor"></div>
+
+        <div class="fl-container-flex fl-fix information-group">
+            <div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-identificationInformation-label"></div>
+            <div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+                <!-- first group -->
+                <div class="info-column">
+                    <div class="info-column2-50 fl-force-left">
+
+                        <!-- start numbers -->
+                        <div class="info-pair">
+                            <div class="header">
+                                <span class="label required csc-collection-object-objectNumber-label"></span><span class="required">*</span>
+                            </div>
+                            <div class="content csc-object-identification-object-number-container clearfix">
+                                <input type="text" class="csc-object-identification-object-number pattern-chooser-input" />
+                            </div>
+                        </div>
+                        <!-- end numbers -->
+                        
+                        <!-- start other-number -->
+                        <div class="info-pair">
+                            <div class="header">
+                                <div class="label csc-collection-object-otherNumber-label"></div>
+                            </div>
+                            <div class="content">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td class="csc-collection-object-otherNumber-label"></td>
+                                            <td class="csc-collection-object-numberType-label"></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="csc-object-identification-otherNumbers">
+                                            <td><input type="text" class="csc-object-identification-other-number"/></td>
+                                            <td><select class="csc-object-identification-other-number-type input-select"><option value="">Options not loaded</option></select></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end other-number -->
+
+                        <!-- start record-status -->
+                        <div class="info-pair-select">
+                            <div class="header">
+                                <div class="label csc-collection-object-recordStatus-label"></div>
+                            </div>
+                            <div class="content">
+                                <select class="csc-object-identification-record-status input-select"><option value="">Options not loaded</option></select>
+                            </div>
+                        </div>
+                        <!-- end record-status -->
+
+
+                    </div> <!-- end info-column2-50 fl-force-left -->
+
+                    <div class="info-column2-50 fl-force-right">
+
+                        <!-- start distinguishing-features -->
+                        <div class="info-pair">
+                            <div class="header">
+                                <div class="label csc-collection-object-distinguishingFeatures-label"></div>
+                            </div>
+                            <div class="content">
+                                <textarea rows="4" cols="30" class="input-textarea csc-object-identification-distinguishing-features"></textarea>
+                            </div>
+                        </div>
+                        <!-- end distinguishing-features -->
+
+                    </div> <!-- end info-column2-50 (right) -->
+                </div> <!-- end info-column -->
+            </div> <!-- end first group -->
+        </div> <!-- end content main -->
+    </div><!-- information-group -->
+
+    <div id="secondary-nav-footer">
+        <div id="secondary-nav-menu-sub">
+            <div class="button-row">
+                <a style="display:none;" class="csc-goto gotoButton"></a>
+                <input type="button" class="csc-createFromExisting createFromExistingButton" />
+                <input type="button" class="csc-cancel cancelButton" />
+                <input type="button" class="csc-delete deleteButton" />
+                <input type="button" class="csc-save saveButton" />
+            </div>
+        </div>
+    </div>
+</div>
