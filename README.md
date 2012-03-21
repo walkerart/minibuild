@@ -51,8 +51,12 @@ or for example:
 _this does not work with the collectionobject service_
 
 
-compile changes locally with:
-cd minibuild/application && ant deploy
-cd minibuild/ui && ant deploy
-cd services/services/[service-name] && ant deploy
+### compile changes locally with:
 
+`cd minibuild/application && ant deploy`
+
+`cd minibuild/ui && ant deploy`
+
+`cd services/services/[service-name] && ant deploy`
+
+`fab local_restart_server`
