@@ -37,11 +37,9 @@ cspace/
 simlink minibuild/fabfile.py to services/fabfile.py for less cd'ing
 after setting up the project and starting the server:
 
-1. first do:
-* `fab local_tenant_init` will login and hit the tenant init url
+1. `fab local_tenant_init` which will login and hit the tenant init url
 
-2. then:
-* `fab local_auth_init`  will login and hit the authority/vocab init url
+2. `fab local_auth_init`  which will login and hit the authority/vocab init url
 
 when extending an authority, 
 and you want to see if the extension field gets created:
