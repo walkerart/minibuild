@@ -4,7 +4,8 @@
  Collectionspace 2.0 will need to be installed
 
  as well as (fabric)[http://docs.fabfile.org/]
- _you will need to edit the variables at the top of fabfile.py_
+
+ __YOU WILL NEED TO EDIT THE VARIABLES AT THE TOP OF fabfile.py__
 
 ## Using fabric to deploy to a remote machine
 
@@ -46,7 +47,8 @@ and you want to see if the extension field gets created:
 `fab test_authority:example,field_name=extention_field,hosts=localhost`
 or for example:
 `fab test_authority:location,field_name=gallery,hosts=localhost`
-this does not work with the collectionobject service
+
+_this does not work with the collectionobject service_
 
 
 compile changes locally with:
