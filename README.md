@@ -45,3 +45,10 @@ and you want to see if the extension field gets created:
 or for example:
 `fab test_authority:location,field_name=gallery,hosts=localhost`
 this does not work with the collectionobject service
+
+
+compile changes locally with:
+cd minibuild/application && ant deploy
+cd minibuild/ui && ant deploy
+cd services/services/[service-name] && ant deploy
+
