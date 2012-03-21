@@ -5,7 +5,7 @@
 
  as well as (fabric)[http://docs.fabfile.org/]
 
- __YOU WILL NEED TO EDIT THE VARIABLES AT THE TOP OF fabfile.py__
+ __you will need to edit the variables at the top of fabfile.py__
 
 ## Using fabric to deploy to a remote machine
 
