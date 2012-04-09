@@ -14,5 +14,9 @@
     	<selector>personAuthority-employerDelete</selector>
     </field>
 
+    <field id="website" section="walkerart">
+    	<selector>personAuthority-website</selector>
+    </field>
+
   </section>
 </root>
