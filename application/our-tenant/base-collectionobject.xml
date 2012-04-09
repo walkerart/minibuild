@@ -1,7 +1,7 @@
 
             <record id="collection-object" in-findedit="yes">
                 <services-url>collectionobjects</services-url>
-                <services-tenant-singular>CollectionObject</services-tenant-singular>
+                <services-tenant-singular>CollectionObjectTenant5</services-tenant-singular>
                 <services-list-path>abstract-common-list/list-item</services-list-path>
                 <services-record-path id="common">collectionobjects_common:http://collectionspace.org/services/collectionobject,collectionobjects_common</services-record-path>
                 <services-record-path id="collectionspace_core">collectionspace_core:http://collectionspace.org/collectionspace_core/,collectionspace_core</services-record-path>
