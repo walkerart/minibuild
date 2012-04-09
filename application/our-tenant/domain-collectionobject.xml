@@ -13,14 +13,21 @@
     <field id="status" section="walkerart">
     	<selector>collectionobject-status</selector>
     </field>
+
     <field id="notes" section="walkerart">
     	<selector>collectionobject-notes</selector>
     </field>
+
     <field id="date" section="walkerart" ui-type="date">
     	<selector>collectionobject-date</selector>
     </field>
+
     <field id="faRelatedWorkLabel" section="finearts">
     	<selector>collectionobject-faRelatedWorkLabel</selector>
+    </field>
+
+    <field id="worldpremiere" section="performingarts">
+    	<selector>collectionobject-worldpremiere</selector>
     </field>
 
   </section>
