@@ -171,8 +171,11 @@ def auth_init():
     llocal(wget  + tenant +'/authorities/vocab/initialize' + ' -O - ')#!!lize!!
 
 def test_collection_object(field_name=None):
+    "check if a field exists in fieldsReturned"
     objects_list = services_LIST('collectionobjects')
-    if field_name in objects_list:
+    csid = _find_default_authority_csid(objects_list)
+    object_schema_dump = services_LIST('collectionobjects/{csid}'.format(csid=csid))
+    if field_name in object_schema_dump:
         print green('yes')
     else: 
         print red('no')
@@ -212,7 +215,7 @@ def services_LIST(service):
 
 def _find_default_authority_csid(string):
     tree = objectify.fromstring(string)
-    items = [(item.displayName,item.csid)  for item in tree.findall('list-item')]
+    items = [(getattr(item,'displayName', '-'),item.csid)  for item in tree.findall('list-item')]
     item = filter(lambda item: 'Test' not in str(item[0]), items)
     if not item:
         print red("did you forget to run auth_init?")
