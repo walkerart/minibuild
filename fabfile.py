@@ -20,6 +20,17 @@ minibuild_dir = '/home/ubuntu/src/minibuild/'
 rrun   = lambda string,*args,**kwargs: wrapped_run(string.format(**env), *args,**kwargs)
 llocal = lambda string,*args,**kwargs: wrapped_local(string.format(**env), *args,**kwargs)
 
+@hosts('localhost')
+def build_service(service):
+    "not implemented"
+    pass 
+    srv_dir = 'somwhere'
+    with cd(srv_dir+'3rdparty'):
+        print llocal('pwd', True)
+        llocal('mvn -Dmaven.test.skip=true clean install')
+    with cd(srv_dir):
+        llocal('ant deploy')
+
 def stop_server():
     "runs shutdown.sh -force and kills tomcat"
     with settings(warn_only=True):
@@ -170,7 +181,7 @@ def auth_init():
     llocal(wget  + tenant + '/authorities/initialise' + ' -O -')
     llocal(wget  + tenant +'/authorities/vocab/initialize' + ' -O - ')#!!lize!!
 
-def test_collection_object(field_name=None):
+def test_collectionobject(field_name=None):
     "check if a field exists in fieldsReturned"
     objects_list = services_LIST('collectionobjects')
     csid = _find_default_authority_csid(objects_list)
