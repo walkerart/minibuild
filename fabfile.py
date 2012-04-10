@@ -170,10 +170,17 @@ def auth_init():
     llocal(wget  + tenant + '/authorities/initialise' + ' -O -')
     llocal(wget  + tenant +'/authorities/vocab/initialize' + ' -O - ')#!!lize!!
 
+def test_collection_object(field_name=None):
+    objects_list = services_LIST('collectionobjects')
+    if field_name in objects_list:
+        print green('yes')
+    else: 
+        print red('no')
+
 def test_authority(authority,field_name=None):
-    "use the ?authorities naming style; so org for orgauthorities and person for personauthorities"
+    "use the ?authorities naming style; so organization for orgauthorities(?!) and person for personauthorities"
     env.field_name = field_name
-    env.authority = authority    
+    env.authority = authority
     find_table = "psql -U catalina nuxeo -c '\d' | grep {authority}s_{tenant}"
     if env.host_string == 'localhost':
         with settings(warn_only= True):
@@ -183,21 +190,26 @@ def test_authority(authority,field_name=None):
                 return
     if authority == 'organization':
         env.authorities = 'org' + 'authorities'
-
     else:
         env.authorities = authority + 'authorities'
     env.authority = authority
-    # env.login_password = prompt("enter password for {}:".format(env.login_userid))
-    env.login_password = env['password']
-    authorities_list = llocal('wget --user={login_userid} --password={login_password}\
-                              --keep-session-cookies \
-                              http://{host_string}:{http_port}/cspace-services/{authorities}\
-                              -O - ', True)
+    authorities_list = services_LIST(authority)
+
     csid = _find_default_authority_csid(authorities_list)
     success = _post_item_to_authority(authority,csid)
     if success:
         # llocal('rm {}.xml'.format(authority))
         pass
+
+def services_LIST(service):
+    env.service = service
+    env.login_password = env['password']
+    list_response = llocal('wget --user={login_userid} --password={login_password}\
+                              --keep-session-cookies \
+                              http://{host_string}:{http_port}/cspace-services/{service}\
+                              -O - ', True)
+    return list_response
+
 def _find_default_authority_csid(string):
     tree = objectify.fromstring(string)
     items = [(item.displayName,item.csid)  for item in tree.findall('list-item')]
