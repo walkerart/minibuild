@@ -25,7 +25,7 @@
     </field>
 
     <field id="faRelatedWorkLabel" section="finearts">
-    	<selector>collection-object-faRelatedWorkLabel</selector>
+    	<selector>collection-object-faRelatedWork</selector>
     </field>
 
     <field id="worldpremiere" section="performingarts">
