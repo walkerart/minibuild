@@ -1,5 +1,7 @@
 <root>
   <services-record-path id="walkerart">collectionobjects_walkerart:http://collectionspace.org/services/collectionobject/local/walkerart,collectionobjects_walkerart</services-record-path>
+  <services-record-path id="performingarts">collectionobjects_performingarts:http://collectionspace.org/services/collectionobject/domain/performingarts,collectionobjects_performingarts</services-record-path>
+  <services-record-path id="finearts">collectionobjects_finearts:http://collectionspace.org/services/collectionobject/domain/finearts,collectionobjects_finearts</services-record-path>
 
   <section id="collectionobjectNameAuthorityInformation">
     <field id="collection" section="walkerart">
