@@ -3,7 +3,7 @@
   <services-record-path id="performingarts">collectionobjects_performingarts:http://collectionspace.org/services/collectionobject/domain/performingarts,collectionobjects_performingarts</services-record-path>
   <services-record-path id="finearts">collectionobjects_finearts:http://collectionspace.org/services/collectionobject/domain/finearts,collectionobjects_finearts</services-record-path>
 
-  <section id="collectionobjectNameAuthorityInformation">
+  <section id="identificationInformationExtensions">
     <field id="collection" section="walkerart">
     	<selector>collection-object-collection</selector>
     </field>
@@ -20,7 +20,7 @@
     	<selector>collection-object-notes</selector>
     </field>
 
-    <field id="faRelatedWorkLabel" section="finearts">
+    <field id="faWatermarkLabel" section="finearts">
     	<selector>collection-object-faWatermark</selector>
     </field>
 
@@ -31,3 +31,10 @@
   </section>
 
 </root>
+<!-- how to do a checkbox -->
+<!-- 		<field id="isComponent" section="pahma"> -->
+<!-- 			<options> -->
+<!-- 				<option id="no" default="yes">No</option> -->
+<!-- 				<option id="yes">Yes</option> -->
+<!-- 			</options> -->
+<!-- 		</field> -->
