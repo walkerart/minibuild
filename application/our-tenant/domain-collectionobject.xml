@@ -20,10 +20,6 @@
     	<selector>collection-object-notes</selector>
     </field>
 
-    <field id="date" section="walkerart" ui-type="date">
-    	<selector>collection-object-date</selector>
-    </field>
-
     <field id="faRelatedWorkLabel" section="finearts">
     	<selector>collection-object-faWatermark</selector>
     </field>
