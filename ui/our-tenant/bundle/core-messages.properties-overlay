@@ -6,3 +6,5 @@ location-galleryLabel: Gallery
 template-walkerart: walkerart
 template-performingarts: Performing\ Arts
 collection-object-worldpremiereLabel: World\ Premiere
+collection-object-notesLabel: Notes
+collection-object-faRelatedWorkLabel: faRelated\ Work
