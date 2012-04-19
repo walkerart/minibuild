@@ -1,6 +1,5 @@
 {
     "cataloging": {
-        // "templates": ["inventory", "photograph", "walkerart", "performingarts"]
         "templates": ["walkerart", "performingarts"]
     },
     "intake": {
