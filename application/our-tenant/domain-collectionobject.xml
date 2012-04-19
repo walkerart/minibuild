@@ -3,32 +3,33 @@
 
   <section id="collectionobjectNameAuthorityInformation">
     <field id="collection" section="walkerart">
-    	<selector>collectionobject-collection</selector>
+    	<selector>collection-object-collection</selector>
     </field>
 
     <field id="format" section="walkerart">
-    	<selector>collectionobject-format</selector>
+    	<selector>collection-object-format</selector>
     </field>
 
     <field id="status" section="walkerart">
-    	<selector>collectionobject-status</selector>
+    	<selector>collection-object-status</selector>
     </field>
 
     <field id="notes" section="walkerart">
-    	<selector>collectionobject-notes</selector>
+    	<selector>collection-object-notes</selector>
     </field>
 
     <field id="date" section="walkerart" ui-type="date">
-    	<selector>collectionobject-date</selector>
+    	<selector>collection-object-date</selector>
     </field>
 
     <field id="faRelatedWorkLabel" section="finearts">
-    	<selector>collectionobject-faRelatedWorkLabel</selector>
+    	<selector>collection-object-faRelatedWorkLabel</selector>
     </field>
 
     <field id="worldpremiere" section="performingarts">
-    	<selector>collectionobject-worldpremiere</selector>
+    	<selector>collection-object-worldpremiere</selector>
     </field>
 
   </section>
+
 </root>
