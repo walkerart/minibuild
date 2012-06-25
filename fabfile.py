@@ -74,6 +74,9 @@ def deploy_services():
         _git_pull()
         _build()
         rrun('ant create_db import')
+	tenant_init()
+	auth_init()
+
     start_server()
 
 def print_env():
@@ -95,6 +98,7 @@ def cat_log():
     rrun("tail {CSPACE_JEESERVER_HOME}/logs/catalina.out",)
 
 def _build():
+    rrun('mvn install -DskipTests')
     rrun('ant undeploy deploy')
 
 def _git_pull():
