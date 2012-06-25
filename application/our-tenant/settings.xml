@@ -2,8 +2,8 @@
     <admin>
         <username>admin@core.collectionspace.org</username>
         <password>Administrator</password>
-        <tenant>1</tenant>
-        <tenantname>core</tenantname>
+        <tenant>5</tenant>
+        <tenantname>walkerart</tenantname>
         <cookievalidformins>6666</cookievalidformins>
     </admin>
     <email>

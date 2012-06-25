@@ -1,27 +1,40 @@
 <root>
   <services-record-path id="walkerart">collectionobjects_walkerart:http://collectionspace.org/services/collectionobject/local/walkerart,collectionobjects_walkerart</services-record-path>
+  <services-record-path id="performingarts">collectionobjects_performingarts:http://collectionspace.org/services/collectionobject/domain/performingarts,collectionobjects_performingarts</services-record-path>
+  <services-record-path id="finearts">collectionobjects_finearts:http://collectionspace.org/services/collectionobject/domain/finearts,collectionobjects_finearts</services-record-path>
 
-  <section id="collectionobjectNameAuthorityInformation">
+  <section id="identificationInformationExtensions">
     <field id="collection" section="walkerart">
-    	<selector>collectionobject-collection</selector>
+    	<selector>collection-object-collection</selector>
     </field>
 
     <field id="format" section="walkerart">
-    	<selector>collectionobject-format</selector>
+    	<selector>collection-object-format</selector>
     </field>
 
     <field id="status" section="walkerart">
-    	<selector>collectionobject-status</selector>
+    	<selector>collection-object-status</selector>
     </field>
+
     <field id="notes" section="walkerart">
-    	<selector>collectionobject-notes</selector>
+    	<selector>collection-object-notes</selector>
     </field>
-    <field id="date" section="walkerart" ui-type="date">
-    	<selector>collectionobject-date</selector>
+
+    <field id="faWatermarkLabel" section="finearts">
+    	<selector>collection-object-faWatermark</selector>
     </field>
-    <field id="faRelatedWorkLabel" section="finearts">
-    	<selector>collectionobject-faRelatedWorkLabel</selector>
+
+    <field id="worldpremiere" section="performingarts">
+    	<selector>collection-object-worldpremiere</selector>
     </field>
 
   </section>
+
 </root>
+<!-- how to do a checkbox -->
+<!-- 		<field id="isComponent" section="pahma"> -->
+<!-- 			<options> -->
+<!-- 				<option id="no" default="yes">No</option> -->
+<!-- 				<option id="yes">Yes</option> -->
+<!-- 			</options> -->
+<!-- 		</field> -->

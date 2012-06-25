@@ -14,11 +14,12 @@
 		</div>
 		
 		<div class="csc-templateEditor"></div>
-                  this is CatalogingTemplate
 		
 		<div class="fl-container-flex fl-fix information-group">
 			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-identificationInformation-label cs-togglable-collapsed"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main" style="display:none;">
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main" 
+                 style="display:none;"
+                 >
 				<div class="info-column">
 					<div class="info-column2-50 fl-force-left">
 						<div class="info-pair">
@@ -60,7 +61,7 @@
 								</table>
 							</div>
 						</div>
-						
+
 						<div class="info-pair-select">
 							<div class="header">
 								<div class="label csc-collection-object-responsibleDepartments-label"></div>
@@ -90,14 +91,37 @@
 					</div>
 					
 					<div class="info-column2-50 fl-force-right">
-						<div class="info-pair">
-							<div class="header">
-								<div class="label csc-collection-object-briefDescriptions-label"></div>
-							</div>
-							<div class="content">
-								<textarea rows="4" cols="30" class="input-textarea csc-object-identification-brief-description"></textarea>
-							</div>
-						</div>
+
+<!-- testing -->
+
+            <div class="info-pair">
+              <div class="header">
+                <span class="label csc-collection-object-notes-label"></span>
+              </div>
+              <div class="content">
+                <input type="text" class="csc-collection-object-notes" />
+              </div>
+            </div>
+
+            <div class="info-pair">
+              <div class="header">
+                <span class="label csc-collection-object-faWatermark-label"></span>
+              </div>
+              <div class="content">
+                <input type="text" class="csc-collection-object-faWatermark" />
+              </div>
+            </div>
+
+            <div class="info-pair">
+              <div class="header">
+                <span class="label csc-collection-object-worldpremiere-label"></span>
+              </div>
+              <div class="content">
+                <input type="text" class="csc-collection-object-worldpremiere" />
+              </div>
+            </div>
+						
+<!-- end testing -->
 						
 						<div class="info-pair">
 							<div class="header">
@@ -222,8 +246,10 @@
 		</div> <!-- information-group -->
 
 		<div class="fl-container-flex fl-fix information-group">
-			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-descriptionInformation-label"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-descriptionInformation-label cs-togglable-collapsed"></div>
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                 style="display:none;"
+                 >
 				<div class="info-column">
 					<div class="info-column2-50 fl-force-left">
 						<div class="info-pair">
@@ -421,8 +447,10 @@
 				<div class="csc-collection-object-dimension"></div>
 			
 				<div class="fl-container-flex fl-fix information-subgroup">
-					<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-contentInformation-label"></div>
-					<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+					<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-contentInformation-label cs-togglable-collapsed"></div>
+					<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                         style="display:none;"
+                         >
 						<div class="info-column">
 							<div class="info-pair">
 								<div class="header">
@@ -611,8 +639,10 @@
 				
 				<div class="fl-container-flex fl-fix information-group infoGroup"> <!--info-group = repeatable container -->
                     <div class="csc-collection-object-textualInscriptionGroup">
-					    <div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-textualInscriptionInformation-label"></div>
-                        <div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+					    <div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-textualInscriptionInformation-label cs-togglable-collapsed"></div>
+                        <div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                             style="display:none;"
+                             >
                             <div class="info-column">
                                 <div class="info-pair">
                                     <div class="header">
@@ -727,8 +757,10 @@
 				
 				<div class="fl-container-flex fl-fix information-group infoGroup"> <!--info-group = repeatable container -->
                     <div class="csc-collection-object-nonTextualInscriptionGroup">
-					    <div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-nonTextualInscriptionInformation-label"></div>
-                        <div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+					    <div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-nonTextualInscriptionInformation-label cs-togglable-collapsed"></div>
+                        <div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                             style="display:none;"
+                             >
                             <div class="info-column">
                                 <div class="info-pair">
                                     <div class="header">
@@ -808,8 +840,10 @@
 		</div> <!-- information-group -->
 			
 		<div class="fl-container-flex fl-fix information-group">
-			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectProductionInformation-label"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectProductionInformation-label cs-togglable-collapsed"></div>
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                 style="display:none;"
+                 >
 				<div class="info-column">
 					<div class="info-column2-50 fl-force-left">
 						<div class="info-pair">
@@ -976,11 +1010,15 @@
 		</div> <!-- information-group -->
 			
 		<div class="fl-container-flex fl-fix information-group">			
-			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectHistoryAssociationInformation-label"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">				
+			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectHistoryAssociationInformation-label cs-togglable-collapsed"></div>
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                 style="display:none;"
+                 >				
 				<div class="fl-container-flex fl-fix information-subgroup">					
-					<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-associationInformation-label"></div>
-					<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+					<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-associationInformation-label cs-togglable-collapsed"></div>
+					<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                         style="display:none;"
+                         >
 						<div class="info-column">
 							<div class="info-column2-50 fl-force-left">
 								<div class="info-pair">
@@ -1399,8 +1437,10 @@
 		</div> <!-- information-group -->
 			
 		<div class="fl-container-flex fl-fix information-group">			
-			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectOwnerContributionInformation-label"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectOwnerContributionInformation-label cs-togglable-collapsed"></div>
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                 style="display:none;"
+                 >
 				<div class="info-column">
 					<div class="info-pair">
 						<div class="header">
@@ -1448,8 +1488,10 @@
 		</div> <!-- information-group -->
 			
 		<div class="fl-container-flex fl-fix information-group">			
-			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectViewerContributionInformation-label"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectViewerContributionInformation-label cs-togglable-collapsed"></div>
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                 style="display:none;"
+                 >
 				<div class="info-column">
 					<div class="info-pair">
 						<div class="header">
@@ -1508,8 +1550,10 @@
 		</div> <!-- information-group -->
 		
 		<div class="fl-container-flex fl-fix information-group">			
-			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-referenceInformation-label"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-referenceInformation-label cs-togglable-collapsed"></div>
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                 style="display:none;"
+                 >
 				<!-- Changed in CSPACE-3501. Reference and Catalog number merged into repeatable group; catalog number renamed reference note -->
 				<div class="info-column">
 					<div class="info-pair">
@@ -1538,8 +1582,10 @@
 		</div> <!-- information-group -->
 			
 		<div class="fl-container-flex fl-fix information-group">
-			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectCollectionInformation-label"></div>
-			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main">
+			<div class="csc-recordEditor-header fl-container-flex header toggle csc-collection-object-objectCollectionInformation-label cs-togglable-collapsed"></div>
+			<div class="csc-recordEditor-togglable fl-container-flex fl-fix content main"
+                 style="display:none;"
+                 >
 				<div class="info-column">
 					<div class="info-column2-50 fl-force-left">
 						<div class="info-pair">

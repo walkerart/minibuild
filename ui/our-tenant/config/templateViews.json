@@ -1,6 +1,6 @@
 {
     "cataloging": {
-        "templates": ["inventory", "photograph", "walkerart"]
+        "templates": ["walkerart", "performingarts"]
     },
     "intake": {
         "templates": ["doorstopDonation"]
